@@ -6,6 +6,9 @@ from steps.utils.wait_handlers import click_and_wait_for_navigation
 
 from steps.locators.web_elements import AGREE_PRIVACY
 def before_all(context):
+
+    dirname = os.path.dirname(__file__)
+    
     browser = context.config.userdata.get('browser')
     if browser.lower() == 'safari':
         context.driver = webdriver.Safari()
